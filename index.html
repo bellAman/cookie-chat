@@ -8,11 +8,16 @@
   <body ng-controller="mainCtrl">
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postMessage(message)">
+      <form ng-submit="postMessage(message)" class="message-format">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
+      <form ng-submit ="postCookie(cookie)" class ="cookie-format" >
+        <input ng-model="mycookie" placeholder="cookie"/>
+      </form>
+      <input ng-model="messageFilter" placeholder="Filter" class="filter-format"/>
       <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.message}} </p>
+        <p ng-repeat="message in messages | filter: messageFilter | orderBy : '-'+'createdAt'"> {{message.message}} {{message.createdAt| date: "medium"}} </p>>
+        <p ng-repeat="cookie in cookies">{{cookie}}</p>
       </div>
     </div>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>

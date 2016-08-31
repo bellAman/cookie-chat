@@ -19,6 +19,9 @@ body {
 
 .main-container h1 {
   text-align: center;
+  color: white;
+  background: blue;
+
 }
 
 .text-box {
@@ -30,4 +33,23 @@ p{
   text-align: center;
   margin: 3px 0;
   font-size: 17px;
+}
+.message-format{
+  float: left;
+  width: 50%;
+}
+.cookie-format{
+  float: right;
+  width: 50%;
+}
+.filter-format{
+  position: absolute;
+  top: 90px;
+  left:10px;
+  height: 25px;
+  width: 150px;
+}
+.messages-container{
+float: inherit;;
+width: 50%;
 }
